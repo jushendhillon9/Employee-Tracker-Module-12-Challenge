@@ -1,1 +1,4 @@
 # Employee-Tracker-Module-12-Challenge
+<img width="1232" alt="Screen Shot 2023-09-27 at 2 15 24 PM" src="https://github.com/jushendhillon9/Employee-Tracker-Module-12-Challenge/assets/137123520/c9b815a2-dae2-48db-8ec6-b7adca9b0a95">
+Description: In this module challenge, I was tasked with creating an employee tracker command line application built with MySQL, inquirer, and Javascript. The command line application has several options, including the feature to view all departments, view all roles, and view all employees. Using user input, changes to the database can be made such as adding a department, employee, or role, and an employee role can be updated. The application displays the table in an easy to view format. The following is a link to a video of the application in use:
+https://drive.google.com/file/d/1eEuLIXo2xLLf5K0k3dkCiDRFgz6m83BU/view
