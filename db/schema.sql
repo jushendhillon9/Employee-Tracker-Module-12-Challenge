@@ -4,28 +4,31 @@ CREATE DATABASE bestBuy_db;
 
 USE bestBuy_db;
 
-CREATE TABLE departments {
+CREATE TABLE departments (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Department_Name VARCHAR(30) NOT NULL,
-    PRIMARY KEY (ID)
-}
+    department_name VARCHAR(30) NOT NULL
+);
 
-CREATE TABLE roles {
-    id INT NOT NULL AUTO_INCREMENT,
-    Title VARCHAR(30) NOT NULL,
-    Salary DECIMAL NOT NULL,
-    Department_ID VARCHAR(30) NOT NULL, //this will link to the department that the role matches to
-    FOREIGN KEY (Department_ID),
-    REFERENCES departments(id),
-    PRIMARY KEY(id)
-}
+CREATE TABLE roles (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(30) NOT NULL,
+    department_id INT NOT NULL, 
+    salary DECIMAL NOT NULL,
+    FOREIGN KEY (department_id)
+    REFERENCES departments(id)
+);
 
-CREATE TABLE employees {
-    id INT NOT NULL AUTO_INCREMENT,
-    First_Name VARCHAR(30) NOT NULL,
-    Last_Name VARCHAR(30) NOT NULL,
-    Role_ID VARCHAR(30) NOT NULL,
-    FOREIGN KEY (Role_ID),
-    REFERENCES roles(id),
-    MANAGERS_ID INT NOT NULL
-}
+CREATE TABLE managers (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    managers_name VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE employees (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT NOT NULL,
+    managers_id INT NOT NULL,
+    FOREIGN KEY (role_id) REFERENCES roles(id),
+    FOREIGN KEY (managers_id) REFERENCES managers(id)
+);
